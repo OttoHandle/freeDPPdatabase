@@ -31,6 +31,9 @@ ALTER ROLE db_datareader ADD MEMBER dpp_writer;
 ALTER ROLE db_datawriter ADD MEMBER dpp_writer;
 ALTER ROLE db_datareader ADD MEMBER dpp_reader;
 
+--Assign additional permissions
+GRANT ALTER ON SCHEMA::dbo TO dpp_writer;
+
 GO
 
 
@@ -2000,6 +2003,9 @@ GO
 /* --------------------------------------------------------------------- */
 
 /* -------------------- dpp -------------------- */
+
+/* Saves the sector name which is selected in the dpp edit GUI to the dppParamValue table */
+/* If you create the repository yourself you may insert another GUID below instead of 3C812D84-EF2A-4919-A09B-78AA789EB5CE */
 
 SET ANSI_NULLS ON
 GO
